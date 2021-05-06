@@ -7,12 +7,6 @@ class Size(models.Model):
 
     def __str__(self):
         return self.name
-    
-class Topping(models.Model):
-    name = models.CharField(max_length=20)
-
-    def __str__(self):
-        return self.name
 
 class Pizza(models.Model):
     
@@ -20,6 +14,6 @@ class Pizza(models.Model):
 			('Regular', 'Regular'),
 			('Square', 'Square'),
     }
-    size = models.ForeignKey(Size, on_delete=models.CASCADE)
-    type = models.CharField(max_length=10, choices=TYPES)
-    toppings = models.ManyToManyField(Topping)
+    size = models.CharField(max_length=20)
+    type = models.CharField(max_length=10, choices=TYPES, blank=True)
+    toppings = models.CharField(max_length=150, blank=True)

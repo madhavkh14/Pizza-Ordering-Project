@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
+    'rest_framework',
+    'API'
 ]
 
 MIDDLEWARE = [
@@ -75,8 +78,14 @@ WSGI_APPLICATION = 'C3_Project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'myFirstDatabase',
+        'CLIENT': {
+        'host': 'mongodb+srv://Madhavadmin:MadhavPizza123@madhavcluster.djs4a.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+        'username': 'Madhavadmin',
+        'password' : 'MadhavPizza123',
+        'authMechanism': 'SCRAM-SHA-1',
+        }
     }
 }
 

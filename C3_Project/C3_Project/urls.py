@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from API import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('list_pizza/',views.ListPizza.as_view(), name="list-pizza"),
+    path('create_pizza/',views.CreatePizza.as_view(), name="create-pizza"),
+    path('edit_pizza/<str:pk>',views.EditPizza.as_view(), name="edit-pizza"),
 ]
