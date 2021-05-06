@@ -5,8 +5,8 @@ from .models import *
 
 @admin.register(Size)
 class SizeAdmin(admin.ModelAdmin):
-    list_fields=['name']
+    list_display=['name']
 
 @admin.register(Pizza)
 class PizzaAdmin(admin.ModelAdmin):
-    list_fields=['size__name','type','toppings']
+    list_display=['size','type','toppings']
